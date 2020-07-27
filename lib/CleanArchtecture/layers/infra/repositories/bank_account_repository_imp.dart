@@ -1,7 +1,7 @@
 import 'package:dartz/dartz.dart';
 
-import 'package:roadmap_flutter_dart/CleanArchtecture/commons/erros/failure.dart';
-import 'package:roadmap_flutter_dart/CleanArchtecture/commons/mapper/mapper.dart';
+import 'package:roadmap_flutter_dart/CleanArchtecture/core/erros/failure.dart';
+import 'package:roadmap_flutter_dart/CleanArchtecture/core/mapper/mapper.dart';
 import 'package:roadmap_flutter_dart/CleanArchtecture/layers/infra/errors/repository_exception.dart';
 
 import '../../domain/entities/bank_account_entity.dart';

@@ -1,4 +1,4 @@
-import 'package:roadmap_flutter_dart/CleanArchtecture/commons/mapper/mapper.dart';
+import 'package:roadmap_flutter_dart/CleanArchtecture/core/mapper/mapper.dart';
 
 import '../../domain/entities/bank_account_entity.dart';
 import '../../domain/usecases/bank_account_usecase.dart';

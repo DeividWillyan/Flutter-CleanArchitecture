@@ -1,4 +1,4 @@
-import 'package:roadmap_flutter_dart/CleanArchtecture/commons/erros/failure.dart';
+import 'package:roadmap_flutter_dart/CleanArchtecture/core/erros/failure.dart';
 
 class UseCaseException extends Failure {
   final String errorMessage;
