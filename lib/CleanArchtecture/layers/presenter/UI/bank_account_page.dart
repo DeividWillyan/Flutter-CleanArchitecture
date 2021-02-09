@@ -24,25 +24,21 @@ class _BankAccountPageState extends State<BankAccountPage> {
   bool showAccounts = false;
 
   _BankAccountPageState() {
-
     Mapper _mapper = BankAccoutMapper();
     BankAccountDatasource _persistance = BankAccountDatasourceImp();
     BankAccountRepository _repository = BankAccountRepositoryImp(_persistance, _mapper);
     BankAccountUseCase _useCase = BankAccountUseCaseImp(_repository);
     controller = BankAccountController(_useCase, _mapper);
-
   }
 
-  final _scaffoldKey = GlobalKey<ScaffoldState>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      key: _scaffoldKey,
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           if (!showAccounts) {
-            controller.getAccounts().then((value) => _scaffoldKey.currentState
-                .showSnackBar(SnackBar(content: Text(value))));
+            controller.getAccounts().then((value) =>
+                ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(value))));
           }
           setState(() {
             showAccounts = !showAccounts;
@@ -57,14 +53,14 @@ class _BankAccountPageState extends State<BankAccountPage> {
           children: [
             TextField(
               decoration: InputDecoration(labelText: 'Numero da conta'),
-              onChanged: (val) => controller.dto =
-                  controller.dto.copyWith(accountNumber: int.parse(val)),
+              onChanged: (val) =>
+                  controller.dto = controller.dto.copyWith(accountNumber: int.parse(val)),
             ),
             Center(
-              child: RaisedButton(
+              child: ElevatedButton(
                 onPressed: () {
-                  controller.save().then((value) => _scaffoldKey.currentState
-                      .showSnackBar(SnackBar(content: Text(value))));
+                  controller.save().then((value) =>
+                      ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(value))));
                 },
                 child: Text('Save'),
               ),
