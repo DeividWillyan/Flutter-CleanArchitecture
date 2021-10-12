@@ -1,5 +1,5 @@
 // "Uma classe deve ter apenas um motivo para mudar"
-// Sua responsabilidade é sempre em sima de um e apenas um ator.
+// Sua responsabilidade é sempre em cima de um e apenas um ator.
 
 class ContaCorrente {
   validarContaExiste() {
